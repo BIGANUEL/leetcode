@@ -6,6 +6,7 @@ class Solution:
             return False
         target = total // 2
         memo = defaultdict(bool)
+        @cache
         def dp(i,cur_sum):
             if i >= n or cur_sum > target:
                 return False
