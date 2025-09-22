@@ -1,6 +1,6 @@
 class Solution:
     def fib(self, n: int) -> int:
-        memo = {}
+        memo = defaultdict()
         if n <= 1:
             return n
         if n not in memo:
