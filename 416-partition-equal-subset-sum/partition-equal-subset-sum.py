@@ -1,16 +1,15 @@
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
         n = len(nums)
-        total = sum(nums)
+        total= sum(nums)
+        half= total // 2
+        memo = {}
         if total % 2 != 0:
             return False
-        target = total // 2
-        memo = defaultdict(bool)
-        @cache
         def dp(i,cur_sum):
-            if i >= n or cur_sum > target:
+            if i >= n or cur_sum > half:
                 return False
-            if nums[i] == target or cur_sum == target:
+            if nums[i] == half or cur_sum == half:
                 return True
             if (i,cur_sum) in memo:
                 return memo[(i,cur_sum)]
