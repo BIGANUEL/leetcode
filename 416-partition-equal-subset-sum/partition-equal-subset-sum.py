@@ -3,7 +3,7 @@ class Solution:
         n = len(nums)
         total= sum(nums)
         half= total // 2
-        memo = {}
+        memo = defaultdict(bool)
         if total % 2 != 0:
             return False
         def dp(i,cur_sum):
